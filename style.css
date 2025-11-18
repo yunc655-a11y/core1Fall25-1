@@ -1,0 +1,29 @@
+body {
+	background-color: deeppink;
+}
+img {
+	width: 300px;
+}
+
+p {color: black;
+}
+
+h1 {
+	font-family: sans-serifs;
+}
+
+
+#cd {
+	width: 600px;
+	animation: spin 0.5s linear infinite;
+	animation-play-state: : paused;
+	cursor: pointer;
+}
+
+#cd :active {
+	animation-play-state:running;
+}
+
+@keyframes spin
+to { trans 
+}

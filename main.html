@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fragments of Me</title>
+  <style>
+    body {
+      background-color: #fff;
+      font-family: 'Helvetica', Arial, sans-serif;
+      color: #000;
+      text-align: center;
+      margin: 40px;
+    }
+
+    img {
+      width: 200px;
+      margin: 20px 0;
+      cursor: pointer;
+      tra
+    img:hover {
+      transform: scale(1.2);
+    }
+
+    h1, h2, h3, h4, h5 {
+      margin: 20px 0 10px 0;
+    }
+
+    p {
+      max-width: 600px;
+      margin: 0 auto 20px auto;
+      line-height: 1.6;
+    }
+
+    a {
+      color: #E0FFF5;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <img src="images/diary.png" alt="Diary">
+  <h1>This space is a collection of fragments... like memories, thoughts, habits, and dreams. Each week, I leave behind a small trace of myself, a glimpse into what I love, what I resist, and the moments that continue to shape me.</h1>
+
+  <img src="images/heart.png" alt="Heart">
+  <h2>Heart</h2>
+  <p>I like the quiet glow of mornings, when the world feels soft and half-awake, and I can believe in new beginnings.</p>
+
+  <img src="images/airpod.png" alt="Airpods">
+  <h3>Music</h3>
+  <p>I love listening to music... the way it eases my inner thoughts and brings peace to my mind. 
+  </p>
+
+  <img src="images/smell.png" alt="Perfume bottle">
+  <h4>Smells</h4>
+  <p>I love the smell of fresh rain on pavement, the quiet sweetness of blooming flowers, and the soft, familiar scent of old books. These smells linger in my memory, marking moments that feel like home.</p>
+
+  <img src="images/burger.png" alt="Burger">
+  <h5>Food</h5>
+  <p>I love biting into a juicy hamburger, its warmth and savor grounding me, while the neon lights of Times Square buzz around, making even a simple meal feel alive.</p>
+
+
+  <img src="images/location.png" alt="Burger">
+  <h5>Places I love visitng</h5>
+  <p>I love wandering through hidden streets and quiet corners, discovering spaces that make me pause. From sunlit cafes to bustling city squares, every place holds a story, a feeling, a fleeting magic that lingers in memory long after I leave.</p> 
+
+  <script>
+    const clickSound = new Audio("sounds/click.mp3");
+
+    document.querySelectorAll("img").forEach((image, index) => {
+      // play sound on click
+      image.addEventListener("click", () => {
+        clickSound.currentTime = 0; // rewind to start
+        clickSound.play();
+      });
+
+      // navigate on double-click
+      image.addEventListener("dblclick", () => {
+        if (index === 0) window.location.href = "";
+        else if (index === 1) window.location.href = "heart.html";
+        else if (index === 2) window.location.href = "music.html";
+        else if (index === 3) window.location.href = "smells.html";
+        else if (index === 4) window.location.href = "food.html";
+      });
+    });
+  </script>
+
+</body>
+</html>
