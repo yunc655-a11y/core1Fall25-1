@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fragments of Me</title>
+  <style>
+    body {
+      background-color: #fff;
+      font-family: "Bradley Hand", "Lucida Handwriting", cursive;
+      color: #000;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      position: relative;
+      background-color: #f0f0f0;
+      text-align: center;
+      padding: 80px 20px;
+      height: 250px;
+      overflow: hidden;
+    }
+
+    header h1 {
+      position: relative;
+      z-index: 1;
+      max-width: 900px;
+      margin: 0 auto;
+      line-height: 1.5;
+    }
+
+    .floating-diary {
+      position: absolute;
+      width: 100px;
+      top: 60%; 
+      left: 50%;
+      transform: translate(-50%, -50%);
+      animation: floatDiary 4s ease-in-out infinite alternate;
+    }
+
+    @keyframes floatDiary {
+      0% { transform: translate(-50%, -50%) translateY(0px) rotate(0deg); }
+      50% { transform: translate(-50%, -50%) translateY(-10px) rotate(5deg); }
+      100% { transform: translate(-50%, -50%) translateY(0px) rotate(0deg); }
+    }
+
+    main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+      padding: 40px 20px;
+    }
+
+    .entry {
+      width: 800px;
+      min-height: 450px;
+      background-color: #fff;
+      border: 1px solid #f0f0f0;
+      border-radius: 15px;
+      text-align: center;
+      padding: 30px 20px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .entry:hover {
+      transform: translateY(-7px);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.2);
+    }
+
+    .entry img {
+      width: 300px;
+      margin-bottom: 15px;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+
+    .entry img:hover {
+      transform: scale(1.2);
+    }
+
+    .entry h2 {
+      font-size: 1.5em;
+      margin: 15px 0 10px 0;
+    }
+
+    .entry p {
+      font-size: 1.4em;
+      line-height: 1.6;
+      color: #333;
+    }
+
+  </style>
+  
+</head>
+<body>
+
+  <header>
+    <h1>This space is a collection of fragments... like memories, thoughts, habits, and dreams. Each week, I leave behind a small trace of myself, a glimpse into what I love, what I resist, and the moments that continue to shape me..</h1>
+    <img src="images/diary.png" alt="Diary" class="floating-diary">
+  </header>
+
+  <main>
+    <!-- 각 카드의 이미지에 data-target 속성으로 이동할 HTML 지정 -->
+    <div class="entry">
+      <img src="images/heart1.png" alt="Heart" data-target="heart.html">
+      <h2>Heart that makes my heart fulfilled</h2>
+      <p>I like the quiet glow of mornings, when the world feels soft and half-awake, and I can believe in new beginnings.</p>
+    </div>
+
+    <div class="entry">
+      <img src="images/airpod.png" alt="Music" data-target="music.html">
+      <h2>Music that I love listening</h2>
+      <p>I love listening to music... the way it eases my inner thoughts and brings peace to my mind.</p>
+    </div>
+
+    <div class="entry">
+      <img src="images/perfu.png" alt="Smells" data-target="smells.html">
+      <h2>Smells that I love smelling</h2>
+      <p>I love the smell of fresh rain, blooming flowers, and old books. These smells linger in my memory.</p>
+    </div>
+
+    <div class="entry">
+      <img src="images/burger.png" alt="Food" data-target="food.html">
+      <h2>Food that keeps me awake and drooling</h2>
+      <p>I love biting into a juicy hamburger while neon lights buzz around, making even a simple meal feel alive.</p>
+    </div>
+
+    <div class="entry">
+      <img src="images/quote.png" alt="Quotes" data-target="quote.html">
+      <h2>Quotes that inspire me</h2>
+      <p>I find great inspiration in the insightful quotes of Jordan Peterson. His messages about life and growth stay with me.</p>
+    </div>
+
+    <div class="entry">
+      <img src="images/movie.png" alt="Movies" data-target="movie.html">
+      <h2>Movies & Shows that inspire me</h2>
+      <p>I enjoy 'Coraline', 'Friends', and 'Coffee Prince'. Stories that evoke feelings and imagination captivate me deeply.</p>
+    </div>
+
+    <div class="entry">
+      <img src="images/weather.png" alt="Weather" data-target="weather.html">
+      <h2>Weather that I love</h2>
+      <p>I love clear and refreshing weather. Sunlight, breeze, and comfortable temperature make each day feel special.</p>
+    </div>
+
+    <div class="entry">
+      <img src="images/hobby.png" alt="Hobbies" data-target="hobby.html">
+      <h2>Hobbies I Enjoy</h2>
+      <p>I love walking while listening to music and exploring new places with friends. Small joys and moments of freedom bring me happiness.</p>
+    </div>
+
+    <div class="entry">
+      <img src="images/goal.png" alt="Goals" data-target="goals.html">
+      <h2>Goals I aspire to</h2>
+      <p>I love setting intentions that challenge and inspire me. Each goal carries a story and a quiet satisfaction that stays with me.</p>
+    </div>
+
+    <div class="entry">
+      <img src="images/brush.png" alt="Colors" data-target="colors.html">
+      <h2>Colors I Love</h2>
+      <p>My favorite colors are Tiffany & Co. blue, soft mint, and Cartier burgundy. These shades inspire me and bring joy.</p>
+    </div>
+
+  </main>
+
+  <!-- JS: 모든 entry 이미지에 더블클릭 이벤트 추가 -->
+ <script>
+  // 모든 entry 이미지 선택
+  const entryImages = document.querySelectorAll('.entry img');
+
+  entryImages.forEach(img => {
+    // 더블클릭 이벤트 추가
+    img.addEventListener('dblclick', () => {
+      const targetPage = img.getAttribute('data-target'); // data-target 속성 읽기
+      if (targetPage) {
+        window.location.href = targetPage; // 해당 페이지로 이동
+      } else {
+        console.warn('data-target 속성이 없습니다:', img);
+      }
+    });
+  });
+</script>
+
+
+</body>
+</html>
